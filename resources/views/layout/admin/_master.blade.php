@@ -68,13 +68,13 @@
         
         </div>
         <header class="banner">
-            @include('layout.admin.header')
+            
           </header>
           <article>
             @include('layout.admin.article')
           </article>
           <footer>
-            @include('layout.admin.footer')
+           
           </footer>
     
     </div>

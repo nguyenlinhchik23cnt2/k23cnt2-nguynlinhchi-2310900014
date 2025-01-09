@@ -43,9 +43,10 @@
     <div class="mb-3">
         <label for="nlctrangthai" class="form-label">Trạng thái</label>
         <select class="form-control" id="nlctrangthai" name="nlctrangthai" required>
-            <option value="1" {{ $nlckhachhang->nlc_trangthai == 1 ? 'selected' : '' }}>Kích hoạt</option>
-            <option value="0" {{ $nlckhachhang->nlc_trangthai == 0 ? 'selected' : '' }}>Không kích hoạt</option>
+            <option value="1" {{ old('nlctrangthai', 1) == 1 ? 'selected' : '' }}>Kích hoạt</option>
+            <option value="0" {{ old('nlctrangthai', 1) == 0 ? 'selected' : '' }}>Không kích hoạt</option>
         </select>
+        
     </div>
 
     <button type="submit" class="btn btn-primary">Lưu</button>

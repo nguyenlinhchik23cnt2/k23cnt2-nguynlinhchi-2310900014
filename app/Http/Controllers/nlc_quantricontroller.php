@@ -31,6 +31,8 @@ class nlc_quantricontroller extends Controller
             'nlctaikhoan' => 'Thông tin đăng nhập không chính xác.',
         ]);
     }
+
+    
     //dang ky
     public function nlclistdangky()
 {

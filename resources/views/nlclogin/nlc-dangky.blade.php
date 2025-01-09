@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('nlc-project1.nlcdangky') }}">
+<form method="POST" action="{{ route('nlc-project1.nlclistdangky') }}">
     @csrf
 
     <div class="form-group">

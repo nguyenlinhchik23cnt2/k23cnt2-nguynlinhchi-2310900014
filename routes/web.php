@@ -53,13 +53,17 @@ Route::post('/nlc-project1/nlc-sanpham/nlc-SPeditsubmit/{id}', [nlc_sanphamcontr
 Route::get('/nlc-project1/nlc-sanpham/nlc-delete/{id}',[nlc_sanphamcontroller::class,'nlcSPdelete'])->name('nlc-project1.nlcsanpham.nlcdelete');
 
 #login
-Route::get('/nlc-project1/nlclogin',[nlc_quantricontroller ::class,'nlclogin'])->name('nlc-project1.nlclogin');
-Route::post('/nlc-project1/nlclogin',[nlc_quantricontroller ::class,'nlcloginsubmit'])->name('nlc-project1.nlcloginsubmit');
+
+
+Route::get('/nlc-project1/nlcdangnhap', [nlc_quantricontroller::class, 'nlclogin'])->name('nlc-project1.nlcdangnhap');
+
+Route::post('/nlc-project1/nlcdangnhap', [nlc_quantricontroller::class, 'nlcloginsubmit'])->name('nlc-project1.nlcloginsubmit');
+
 //dang ky
 
 
 Route::get('/nlc-project1/nlclogin', [nlc_quantricontroller::class, 'nlclistdangky'])->name('nlc-project1.nlclistdangky');
-Route::post('/nlc-project1/nlclistdangky', [nlc_quantricontroller::class, 'nlcdangky'])->name('nlc-project1.nlcdangky');
+Route::post('/nlc-project1/nlclistdangky', [nlc_quantricontroller::class, 'nlcloginsubmit'])->name('nlc-project1.nlcdangky ');
 
 
 #khachhang
@@ -88,3 +92,9 @@ Route::get('/nlc-project1/nlchoadon/create', [nlc_hoadonController::class, 'crea
 
 // Route để xử lý form khi submit
 Route::post('/nlc-project1/nlchoadon/create', [nlc_hoadonController::class, 'submitcreate'])->name('nlc-project1.nlchoadon.createsubmit');
+// edit
+
+
+// Định nghĩa route
+Route::get('/nlc-project1/nlchoadon/edit/{id}', [nlc_hoadonController::class, 'edit'])->name('nlc-project1.nlchoadon.edit');
+Route::post('/nlc-project1/nlchoadon/edit/{id}', [nlc_hoadonController::class, 'editsubmit'])->name('nlc-project1.nlchoadon.editsubmit');

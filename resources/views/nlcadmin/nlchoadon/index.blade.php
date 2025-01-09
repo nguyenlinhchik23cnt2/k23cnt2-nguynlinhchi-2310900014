@@ -31,7 +31,16 @@
                 <td>{{$item->nlcdiachi}}</td>
                 <td>{{$item->nlctongtrigia}}</td>
                 <td>{{$item->nlctrangthai ? 'kich hoat' :'khong kich hoat'}}</td>
-                <td>sua/xoa</td>
+                <td>
+                    <a href="/nlc-project1/nlchoadon/edit/{{$item->id}}">
+                        <button type="button" class="btn btn-danger">edit</button>
+                    </a>
+                    
+                    <a href="/nlc-project1/nlchoadon/delete/{{$item->id}}"
+                        onclick="return confirm ('Bạn có chắc muốn xóa không.')"
+                        
+                       ><button type="button" class="btn btn-info">delete</button></a></td>
+                </td>
             </tr>
         @endforeach
     </tbody>

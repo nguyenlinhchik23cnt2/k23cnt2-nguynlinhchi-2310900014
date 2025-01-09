@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\nlc_hoadon;
 use App\Models\nlc_khachhang;
+use Illuminate\Http\Request;
 class nlc_hoadonController extends Controller
 {
    //hien thi da sach hoa don
@@ -40,7 +40,8 @@ class nlc_hoadonController extends Controller
     ]);
 
     // Tạo hóa đơn mới
-    nlc_hoadon::create([
+            nlc_hoadon::create([
+
         'nlcmahoadon' => $request->input('nlcmahoadon'),
         'nlcmakhachhang' => $request->input('nlcmakhachhang'),
         'nlctenkhachhang' => $request->input('nlctenkhachhang'),
@@ -52,14 +53,45 @@ class nlc_hoadonController extends Controller
         'nlctrangthai' => $request->input('nlctrangthai'),
     ]);
 
+    $data = $request->all();
+    nlchoadon::create($data);
+
     // Redirect về trang danh sách hóa đơn hoặc hiển thị thông báo thành công
     return redirect()->route('nlc-project1.nlchoadon')->with('success', 'Hóa đơn đã được thêm thành công!');
 }
+
+
     //edit
+    public function edit($id)
+    {
+        // Tìm hóa đơn theo ID
+        $nlchoadon = nlc_hoadon::findOrFail($id);
+        $nlckhachhang = nlc_khachhang::all();
+       
+        return view('nlcadmin.nlchoadon.edit', compact('nlchoadon','nlckhachhang'));
+    }
     
-
-
-}
-
-
-
+    public function editsubmit(Request $request, $id)
+    {
+        // Validate dữ liệu
+        $request->validate([
+            'nlcmahoadon' => 'required|string',
+            'nlcmakhachhang' => 'required|string',
+            'nlctenkhachhang' => 'required|string',
+            'nlcemail' => 'required|email',
+            'nlcdienthoai' => 'required|string',
+            'nlcdiachi' => 'required|string',
+            'nlcngayhoadon' => 'required|date',
+            'nlctongtrigia' => 'required|numeric',
+            'nlctrangthai' => 'required|boolean',
+        ]);
+        
+        
+        $nlchoadon = nlc_hoadon::findOrFail($id);
+        $data = $request->all();
+        $nlchoadon ->update($request ->all());
+        $nlchoadon->update($data);
+        
+        return redirect()->route('nlc-project1.nlchoadon')->with('success', 'Hóa đơn đã được cập nhật thành công!');
+    }
+}    
