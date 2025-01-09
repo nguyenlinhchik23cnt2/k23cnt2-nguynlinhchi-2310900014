@@ -3,6 +3,11 @@
     <a href="/nlc-project1" class="list-group-item list-group-item-action active" aria-current="true">
      Home
     </a>
+
+    <a href="/nlc-project1/nlcquantri" class=" list-group-item-action active" aria-current="true">
+      Danh sách quản trị 
+       </a>
+
     <a href="/nlc-project1/nlclogin" class=" list-group-item-action active" aria-current="true">
       Đăng ký 
        </a>
@@ -10,6 +15,7 @@
        <a href="/nlc-project1/nlcdangnhap" class=" list-group-item-action active" aria-current="true">
         Đăng nhập  
          </a>
+         
        <a href="/nlc-project1/nlc-loaisanpham" class=" list-group-item-action active" aria-current="true">
         Loại sản phẩm
        </a>

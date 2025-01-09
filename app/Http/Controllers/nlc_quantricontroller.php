@@ -69,5 +69,10 @@ public function nlcdangky(Request $request)
     return redirect()->route('dashboard');
 }
 
+    public function listquantri()
+    {
+        $nlcquantri=nlc_quantri::all();
+        return view('nlcadmin.nlc_quantri.listquantri',['nlcquantri'=>$nlcquantri]);
+    }
 }
 

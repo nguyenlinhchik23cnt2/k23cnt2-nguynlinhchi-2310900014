@@ -58,7 +58,8 @@ Route::get('/nlc-project1/nlc-sanpham/nlc-delete/{id}',[nlc_sanphamcontroller::c
 Route::get('/nlc-project1/nlcdangnhap', [nlc_quantricontroller::class, 'nlclogin'])->name('nlc-project1.nlcdangnhap');
 
 Route::post('/nlc-project1/nlcdangnhap', [nlc_quantricontroller::class, 'nlcloginsubmit'])->name('nlc-project1.nlcloginsubmit');
-
+//quan tri
+Route::get('/nlc-project1/nlcquantri',[nlc_quantricontroller::class, 'listquantri'])->name('nlc-project1.nlcquantri');
 //dang ky
 
 
